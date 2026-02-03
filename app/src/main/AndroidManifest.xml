@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AgroGestor"
+        tools:targetApi="31" >
+
+        <activity
+            android:name=".Panhadores.Acerto.InfoAcertoActivity"
+            android:exported="false"
+            android:parentActivityName=".Panhadores.TodosPanhadoresActivity" />
+
+        <activity
+            android:name=".Panhadores.Acerto.AcertoActivity"
+            android:exported="false"
+            android:parentActivityName=".Panhadores.PanhadoresActivity" />
+
+        <activity
+            android:name=".Panhadores.InfoPanhadorActivity"
+            android:exported="false"
+            android:parentActivityName=".Panhadores.TodosPanhadoresActivity" />
+
+        <activity
+            android:name=".Panhadores.TodosPanhadoresActivity"
+            android:exported="false"
+            android:parentActivityName=".Panhadores.PanhadoresActivity" />
+
+        <activity
+            android:name=".Panhadores.AddPanhadorActivity"
+            android:exported="false"
+            android:parentActivityName=".Panhadores.PanhadoresActivity" />
+
+        <activity
+            android:name=".Panhadores.PanhadoresActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".Talhao.AddTalhaoActivity"
+            android:exported="false"
+            android:parentActivityName=".Lavouras.LavourasActivity" />
+
+        <activity
+            android:name=".Lavouras.InfoLavouraActivity"
+            android:exported="false"
+            android:parentActivityName=".Lavouras.TodasLavourasActivity" />
+
+        <activity
+            android:name=".Lavouras.TodasLavourasActivity"
+            android:exported="false"
+            android:parentActivityName=".Lavouras.LavourasActivity" />
+
+        <activity
+            android:name=".Lavouras.AddLavouraActivity"
+            android:exported="false"
+            android:parentActivityName=".Lavouras.LavourasActivity" />
+
+        <activity
+            android:name=".Lavouras.LavourasActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".Colheita.ColheitasAnterioresActivity"
+            android:exported="false"
+            android:parentActivityName=".Colheita.ColheitaActivity" />
+
+        <activity
+            android:name=".Colheita.AdicionarColheitaActivity"
+            android:exported="false"
+            android:parentActivityName=".Colheita.ColheitaActivity" />
+
+        <activity
+            android:name=".Colheita.ColheitaActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

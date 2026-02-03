@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/input_nome_panhador"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:hint="NOME"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/input_cpf_panhador"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:hint="CPF"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_nome_panhador"/>
+
+    <EditText
+        android:id="@+id/input_numero_panhador"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:hint="NUMERO"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_cpf_panhador"/>
+
+    <EditText
+        android:id="@+id/input_chavePix_panhador"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:hint="CHAVE PIX"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_numero_panhador"/>
+
+    <Button
+        android:id="@+id/botao_add_panhador"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:text="adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_chavePix_panhador" />
+</androidx.constraintlayout.widget.ConstraintLayout>
