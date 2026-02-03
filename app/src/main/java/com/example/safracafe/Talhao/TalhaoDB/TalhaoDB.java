@@ -89,6 +89,19 @@ public class TalhaoDB {
                 new String[]{String.valueOf(idTalhao)});
     }
 
+    public float getPreco(int idTalhao){
+        String sql = "SELECT " + TalhaoDbSchema.TalhoesTbl.Cols.PRECO_TALHAO +
+                " FROM " + TalhaoDbSchema.TalhoesTbl.NOME_TBL +
+                " WHERE " + TalhaoDbSchema.TalhoesTbl.Cols.ID_TALHAO + " = ?";
+
+        Cursor c = mDatabase.rawQuery(sql, new String[]{String.valueOf(idTalhao)});
+        c.moveToFirst();
+        float preco = c.getFloat(c.getColumnIndexOrThrow(TalhaoDbSchema.TalhoesTbl.Cols.PRECO_TALHAO));
+        c.close();
+
+        return preco;
+    }
+
     public void deleteTbl(){
         int delete;
         delete = mDatabase.delete(TalhaoDbSchema.TalhoesTbl.NOME_TBL, null, null);

@@ -30,6 +30,8 @@ public class InfoAcertoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        float totalAcerto = 0;
+
         String nomePanhador = getIntent().getStringExtra("nomePanhador");
 
         mMainTextView = findViewById(R.id.MainTextView);
@@ -55,7 +57,7 @@ public class InfoAcertoActivity extends AppCompatActivity {
                     int idLavoura = cursor.getInt(cursor.getColumnIndexOrThrow(ColheitaDbSchema.ColheitasTbl.Cols.ID_LAVOURA_COLHEITA));
                     System.out.println(idLavoura);
                     int idTalhao = cursor.getInt(cursor.getColumnIndexOrThrow(ColheitaDbSchema.ColheitasTbl.Cols.ID_TAlHAO_COLHEITA));
-                    double total = cursor.getDouble(cursor.getColumnIndexOrThrow("total"));
+                    float total = cursor.getFloat(cursor.getColumnIndexOrThrow("total"));
 
                     c = mTalhaoDb.queryNomeTalhaoById(idTalhao);
                     c.moveToFirst();
@@ -67,11 +69,17 @@ public class InfoAcertoActivity extends AppCompatActivity {
                     String nomeLavoura = c.getString(c.getColumnIndexOrThrow(LavourasDbSchema.LavourasTbl.Cols.NOME_LAVOURA));
                     c.close();
 
+                    float precoTalhao = mTalhaoDb.getPreco(idTalhao);
+                    float acertoTalhao = precoTalhao * total;
+
                     tv = new TextView(this);
                     String text =
                             "LAVOURA: " + nomeLavoura + "\n" +
                             "TALHÃO: " + nomeTalhao + "\n" +
-                            "COLHIDO: " + total;
+                            "COLHIDO: " + total + "\n" +
+                            "ACERTO: R$" + acertoTalhao;
+
+                    totalAcerto += acertoTalhao;
 
                     tv.setText(text);
                     tv.setTextSize(24);
@@ -89,6 +97,20 @@ public class InfoAcertoActivity extends AppCompatActivity {
                 }
                 cursor.close();
             }
+            tv = new TextView(this);
+            String text = "TOTAL DO ACERTO: R$" + totalAcerto;
+            tv.setText(text);
+            tv.
+            tv.setTextSize(30);
+            tv.setPadding(0, 40, 0, 40);
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+
+            tv.setLayoutParams(params);
+            layoutInfo.addView(tv);
         }
     }
 }
