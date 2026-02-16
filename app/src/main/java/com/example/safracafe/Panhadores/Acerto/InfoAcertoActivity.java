@@ -100,7 +100,6 @@ public class InfoAcertoActivity extends AppCompatActivity {
             tv = new TextView(this);
             String text = "TOTAL DO ACERTO: R$" + totalAcerto;
             tv.setText(text);
-            tv.
             tv.setTextSize(30);
             tv.setPadding(0, 40, 0, 40);
 
